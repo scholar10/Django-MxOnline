@@ -1,6 +1,7 @@
 测试git
 git init 普通目录变成git目录
 git add把文件放到暂存区
+    git add ./ 工作区所有文件提交到暂存区
 git commit 文件从暂存区提交到仓库
 git status 查看仓库状态
 git config user.email "xx@qq.com"
