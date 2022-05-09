@@ -29,7 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
 # Application definition
 
 
@@ -144,4 +146,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#电子邮件配置 配置email发送者
 
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "1773256697@qq.com"
+EMAIL_HOST_PASSWORD = "gfvzvparurulcdbj" #验证SMTP服务器的密码，不是邮箱密码。
+EMAIL_USE_TLS = False
+EMAIL_FROM = EMAIL_HOST_USER
