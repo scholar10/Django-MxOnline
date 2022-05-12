@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'organization',
     'operation',
     'captcha',
+    'pure_pagination',
 
 ]
 AUTH_USER_MODEL = "users.UserProfile" #、
@@ -78,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },
@@ -154,3 +156,7 @@ EMAIL_HOST_USER = "1773256697@qq.com"
 EMAIL_HOST_PASSWORD = "gfvzvparurulcdbj" #验证SMTP服务器的密码，不是邮箱密码。
 EMAIL_USE_TLS = False
 EMAIL_FROM = EMAIL_HOST_USER
+
+#资源文件配置，上传文件的路径
+MEDIA_URL = '/media/' #处理从 MEDIA_ROOT 提供的媒体的 URL
+MEDIA_ROOT = os.path.join(BASE_DIR / 'media') #保存用户上传的文件到根目录下的media

@@ -132,7 +132,7 @@ class RestView(View):
             return render(request,"active_fail.html")
 
         return render(request,"login.html")
-#找回密码链接的get请求
+#找回密码链接的POST请求
 class ModifyPwdView(View):
     def post(self,request):
         modify_form = ModifyPwdForm(request.POST)

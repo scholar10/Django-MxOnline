@@ -16,12 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include,re_path
 from django.views.generic import TemplateView
-
+from django.views.static import serve #处理静态文件的
+from MxOnline.settings import MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="index.html"), name="index"), #一般纯静态页面使用这种形式
     #re_path('^login/$', TemplateView.as_view(template_name="login.html"), name="login")
+    path('', include(('organization.urls','organization'),namespace="organization")),
     path('', include(('users.urls','users'),namespace="users")),
+
     path('captcha/', include('captcha.urls')),#验证码
+
+    #配置上传文件的访问处理函数
+    re_path(r'^media/(?P<path>.*)$',serve,{"document_root":MEDIA_ROOT})
 ]
