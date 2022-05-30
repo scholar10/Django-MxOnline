@@ -6,3 +6,5 @@ git commit 文件从暂存区提交到仓库
 git status 查看仓库状态
 git config user.email "xx@qq.com"
 git config user.name "xxx"
+bug修改。。。
+
